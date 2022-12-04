@@ -1,0 +1,24 @@
+# I have imported random, I will use this to generate the random numbers
+import random
+
+class Number_Generator():
+    def Create_random_number(self, amount, minRange, maxRange):
+        random_number = []
+# Here I have a precondition to make sure the input is valid
+        if type(amount) == str or type(minRange) == str or type(maxRange) == str:
+            print("You have to input integers only")
+            pass
+# Here I have a precondition to make sure the amount will be more than 0
+        elif amount == 0:
+            print("Too low amount")
+            pass
+        while amount > 0:
+            new_random_number = random.randint(minRange, maxRange)
+# Here I have a post condition after the operation to make sure the method generated the correct numbers.
+            if new_random_number > minRange and new_random_number < maxRange:
+                random_number.append(new_random_number)
+                amount -= 1
+# Here I have a post condition to alert the user that something has gone wrong with the method
+            elif new_random_number < minRange or new_random_number > maxRange:
+                print("Something went wrong with the number generation")
+        print(*random_number)

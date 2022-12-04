@@ -22,5 +22,3 @@ class Number_Generator():
             elif new_random_number < minRange or new_random_number > maxRange:
                 print("Something went wrong with the number generation")
         print(*random_number)
-#First edit
-#here i will add the second edit
